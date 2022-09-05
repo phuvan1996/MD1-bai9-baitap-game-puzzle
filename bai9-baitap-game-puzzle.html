@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game puzzle</title>
+
+</head>
+<body>
+<!--    <style>-->
+<!--        #anh2{-->
+<!--            box-shadow: red 4px 4px 9px;-->
+<!--        }-->
+<!--    </style>-->
+<style>
+  div{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+</head>
+<body>
+<div>
+  <img id="anh1" src="Image/Gau1.jpg" height="90" width="600" onclick="change1()"><br>
+  <img id="anh2" src="Image/Cat2.jpg" height="90" width="600" onclick="change2()"><br>
+  <img id="anh3" src="Image/Khi3.jpg" height="90" width="600" onclick="change3()"><br>
+</div>
+</body>
+<script>
+  let count1 = 0
+  let count2 = 1
+  let count3 = 2
+  let img1 = document.getElementById('anh1')
+  let img2 = document.getElementById('anh2')
+  let img3 = document.getElementById('anh3')
+  function change1() {
+    count1++;
+    if(count1===1){
+      img1.src = 'Image/Cat1.jpg';
+    }else if(count1===2){
+      img1.src = 'Image/Khi1.jpg';
+    }else{
+      count1 = 0;
+      img1.src = 'Image/Gau1.jpg';
+    }
+    checkColor()
+  }
+  function change2() {
+    count2++;
+    if(count2===2){
+      img2.src = 'Image/Khi2.jpg';
+    }else if(count2===1){
+      img2.src = 'Image/Cat2.jpg';
+    }else{
+      count2 = 0;
+      img2.src = 'Image/Gau2.jpg';
+    }
+    checkColor()
+  }
+  function change3() {
+    count3++;
+    if(count3===1){
+      img3.src = 'Image/Cat3.jpg'
+    }else if(count3===2){
+      img3.src = 'Image/Khi3.jpg'
+    }else{
+      count3 = 0;
+      img3.src = 'Image/Gau3.jpg'
+    }
+    checkColor()
+  }
+  function checkColor() {
+    if(count1===count2 && count2===count3){
+      img1.style.boxShadow = 'green 4px 4px 9px'
+      img2.style.boxShadow = 'green 4px 4px 9px'
+      img3.style.boxShadow = 'green 4px 4px 9px'
+    }else{
+      img1.style.boxShadow = 'yellow 4px 4px 9px'
+      img2.style.boxShadow = 'yellow 4px 4px 9px'
+      img3.style.boxShadow = 'yellow 4px 4px 9px'
+    }
+  }
+</script>
+</body>
+</html>
